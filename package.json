@@ -1,0 +1,50 @@
+{
+  "private": true,
+  "scripts": {
+    "dev": "next",
+    "build": "next build",
+    "start": "next start",
+    "export": "next export"
+  },
+  "dependencies": {
+    "@chakra-ui/icons": "^1.0.5",
+    "@chakra-ui/react": "^1.4.2",
+    "@chakra-ui/theme-tools": "1.1.2",
+    "@choc-ui/paginator": "^3.4.0",
+    "@emotion/react": "11.1.5",
+    "@emotion/styled": "11.1.5",
+    "@ethersproject/bignumber": "^5.6.0",
+    "@fontsource/mononoki": "^4.5.1",
+    "@fontsource/montserrat": "^4.5.4",
+    "@walletconnect/web3-provider": "^1.7.1",
+    "apexcharts": "^3.33.1",
+    "chakra-react-select": "^3.0.2",
+    "chakra-ui-markdown-renderer": "^4.0.0",
+    "crypto-js": "^4.1.1",
+    "eth-crypto": "^2.2.0",
+    "ethereumjs-util": "^7.1.3",
+    "ethers": "^5.5.4",
+    "framer-motion": "^4.0.3",
+    "ipfs-http-client": "^56.0.1",
+    "js-sha3": "^0.8.0",
+    "keen-slider": "^6.6.3",
+    "next": "latest",
+    "raw-loader": "^4.0.2",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
+    "react-icons": "^4.3.1",
+    "react-markdown": "^8.0.0",
+    "react-router-dom": "^6.2.1",
+    "react-select": "^5.2.2",
+    "react-syntax-highlighter": "^15.4.5",
+    "stylis-plugin-rtl": "^2.1.1",
+    "swr": "^1.1.2",
+    "wagmi": "^0.2.17"
+  },
+  "devDependencies": {
+    "@types/node": "^14.6.0",
+    "@types/react": "^17.0.3",
+    "@types/react-dom": "^17.0.3",
+    "typescript": "4.3.2"
+  }
+}

@@ -30,11 +30,25 @@ import {
   Tabs, TabList, TabPanels, Tab, TabPanel
 } from '@chakra-ui/react'
 import { ellipseAddress, encrypt, decrypt, getWordArray } from '../../helpers/utilities'
-import { create } from "ipfs-http-client";
+import {create} from "ipfs-http-client";
 
 // @ts-ignore
-const client = create(process.env.NEXT_PUBLIC_IPFS_RPC)
+//const client = create(process.env.NEXT_PUBLIC_IPFS_RPC)
 
+const projectId = process.env.NEXT_PUBLIC_PROJECT_ID;
+const projectSecret = process.env.NEXT_PUBLIC_PROJECT_SECRET;
+
+const auth = 'Basic ' + Buffer.from(projectId + ':' + projectSecret).toString('base64')
+// @ts-ignore
+const client = create({
+  host: 'ipfs.infura.io',
+  port: 5001,
+  protocol: 'https',
+  apiPath: '/api/v0',
+  headers: {
+    authorization: auth
+  }
+})
 export const SignMessage = () => {
 
   const toast = useToast()
@@ -168,9 +182,7 @@ export const SignMessage = () => {
     if (docEncrypted != null) {
       setKeyChecked('')
       try {
-        const created = await client.add(docEncrypted, {
-          pin: true  // <-- this is the default
-        });
+        const created = await client.add(docEncrypted);
         console.log(created.path)
         if (created.path == message) {
           setEnableSign(false)

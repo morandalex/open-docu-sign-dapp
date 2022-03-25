@@ -116,11 +116,12 @@ export const SignMessage = () => {
           //if (signer) {
           //}
         }
-        await getBalance()
+       // await getBalance()
         await getCashierProductPriceDollar()
         await getCashierProductPriceWei()
         await getSignAllowanceCredit()
         setTimeout(async () => await getAccountSignatures(), 2000)
+       // await getBalance()
       }
     }
     initData()
@@ -568,7 +569,7 @@ export const SignMessage = () => {
                   <Box border='1px' p='2' borderRadius='16' borderColor='gray.600'>
                     <Text>Network : {networkData.chain?.name}  {networkData.chain?.id}</Text>
                     <Text>Connected address : {ellipseAddress(accountData.address)}</Text>
-                    <Text>Your MATIC balance : {balanceData ? balanceData.formatted.substring(0, 6) : ''}</Text>
+                    <Text>Your MATIC balance : {balanceData?.formatted.substring(0, 6) }</Text>
                     <Text as='mark' my='3'>Your current credit is  {allowanceCredit}<br></br></Text>
                     <Text as='i'>When credit is zero , <br></br>you cannot use this service</Text>
                   </Box>

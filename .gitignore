@@ -1,6 +1,7 @@
 .next/
 out/
 
+out.zip
 
 #misc
 .DS_Store

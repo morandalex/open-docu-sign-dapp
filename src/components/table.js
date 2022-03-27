@@ -18,6 +18,7 @@ import {
   useClipboard,
   IconButton,
 } from "@chakra-ui/react";
+const gateway=process.env.NEXT_PUBLIC_IPFS_GATEWAY;
 import Pagination from "@choc-ui/paginator";
 const TablePaginated = ({ table }) => {
   const toast = useToast();
@@ -119,7 +120,7 @@ const TablePaginated = ({ table }) => {
                       alignItems="center"
                       textAlign="center"
                     >
-                      <Link mx='2' isExternal color='yellow' href={'https://ipfs.io/ipfs/' + item.cid}>
+                      <Link mx='2' isExternal color='yellow' href={gateway + item.cid}>
                         {ellipseAddress(item.cid)}
                       </Link>
                       <IconButton onClick={() => copyStr(item.cid)} icon={<CopyIcon />} />

@@ -60,8 +60,10 @@ const client = create({
   protocol: 'https',
   apiPath: '/api/v0'
 })
-export const SignMessage = () => {
+const gateway=process.env.NEXT_PUBLIC_IPFS_GATEWAY;
 
+export const SignMessage = () => {
+  
   const toast = useToast()
   const [{ data: connectData }] = useConnect()
   const [{ data: accountData }, disconnect] = useAccount();
@@ -379,7 +381,7 @@ export const SignMessage = () => {
   }
   async function fetchIPFSDoc(ipfsHash) {
     try {
-      const url = 'https://ipfs.io/ipfs/' + ipfsHash;
+      const url = gateway + ipfsHash;
       const response = await fetch(url);
       return await response.text();
     }
@@ -672,7 +674,7 @@ export const SignMessage = () => {
                     <Link color='purple' isExternal href={'https://iplocation.io/ping/https://ipfs.io/ipfs/' + selectedCid}>Ping service 1</Link>
                     <Link color='green' isExternal href={'  https://check-host.net/check-ping?host=https://ipfs.io/ipfs/' + selectedCid}> Ping service 2</Link>
                     <Link color='pink' isExternal href={'   https://networkappers.com/tools/ping-tool'}>Ping service 3 : here you have to copy the ipfs link</Link>
-                    <Link color='yellow' isExternal href={'https://ipfs.io/ipfs/' + selectedCid}> See encrypted document on ipfs</Link>
+                    <Link color='yellow' isExternal href={gateway + selectedCid}> See encrypted document on ipfs</Link>
                     NOTE: the file will be available on ipfs after some minute because ipfs has to index it
                     <Input placeholder='write here the password to decrypt the document' m='1' onChange={setupDecryptingPassphrase} />
                     <Button

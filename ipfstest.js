@@ -1,6 +1,8 @@
 /* import the ipfs-http-client library */
 const IPFS = require('ipfs-http-client');
 
+//INFURA TEST
+/*
 const projectId = '';
 const projectSecret = '';
 
@@ -14,7 +16,24 @@ const client = IPFS.create({
   headers: {
     authorization: auth
   }
+})*/
+
+// LOCALHOST TEST
+/*const client = IPFS.create({
+  host: 'localhost',
+  port: 5001,
+  protocol: 'http',
+  apiPath: '/api/v0'
+})*/
+
+// NGINX CONFIGURATION TEST
+const client = IPFS.create({
+  host: 'ipfs.opensigndapp.com',
+  port: 80,
+  protocol: 'http',
+  apiPath: '/api/v0'
 })
+
 
 async function fun () {
 

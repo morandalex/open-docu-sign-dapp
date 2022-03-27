@@ -32,10 +32,11 @@ import {
 import { ellipseAddress, encrypt, decrypt, getWordArray } from '../../helpers/utilities'
 import {create} from "ipfs-http-client";
 
-// @ts-ignore
-//const client = create(process.env.NEXT_PUBLIC_IPFS_RPC)
 
-const projectId = process.env.NEXT_PUBLIC_PROJECT_ID;
+
+
+//OPTION 1 : INFURA CONFIUGURATION FOR PROJECT < 5 GB
+/*const projectId = process.env.NEXT_PUBLIC_PROJECT_ID;
 const projectSecret = process.env.NEXT_PUBLIC_PROJECT_SECRET;
 
 const auth = 'Basic ' + Buffer.from(projectId + ':' + projectSecret).toString('base64')
@@ -48,6 +49,16 @@ const client = create({
   headers: {
     authorization: auth
   }
+})*/
+
+
+// OPTION 2: CREATE YOUR IPFS NODE ON YOUR SERVER https://docs.ipfs.io/how-to/command-line-quick-start/
+// @ts-ignore
+const client = create({
+  host: process.env.NEXT_PUBLIC_IPFS_RPC,
+  port: 80,
+  protocol: 'http',
+  apiPath: '/api/v0'
 })
 export const SignMessage = () => {
 

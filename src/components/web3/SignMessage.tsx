@@ -56,8 +56,8 @@ const client = create({
 // @ts-ignore
 const client = create({
   host: process.env.NEXT_PUBLIC_IPFS_RPC,
-  port: 80,
-  protocol: 'http',
+  port: 443,
+  protocol: 'https',
   apiPath: '/api/v0'
 })
 export const SignMessage = () => {

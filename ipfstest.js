@@ -29,8 +29,8 @@ const client = IPFS.create({
 // NGINX CONFIGURATION TEST
 const client = IPFS.create({
   host: 'ipfs.opensigndapp.com',
-  port: 80,
-  protocol: 'http',
+  port: 443,
+  protocol: 'https',
   apiPath: '/api/v0'
 })
 

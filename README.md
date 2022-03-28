@@ -2,7 +2,7 @@
 ![image](https://user-images.githubusercontent.com/9484568/159940021-0f88d42c-5b5d-43d1-901f-7d4990b243f9.png)
 
 ##  Docu Sign Dapp 
- **_A decentralised alternative to signing encrypted documents_**
+ **_A decentralised alternative to sign encrypted documents_**
 
 This application allows documents to be uploaded encrypted with AES to ipfs and signed on the blockchain.
 

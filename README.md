@@ -8,7 +8,7 @@ This application allows documents to be uploaded encrypted with AES to ipfs and 
 
 Compatible evm networks supported are Mumbai and Polygon mainnet.
 
-Test it! https://opensigndapp.com:9043/
+Test it! https://opensigndapp.com
 
 **Starting using this dapp**
 

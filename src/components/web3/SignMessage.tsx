@@ -36,7 +36,7 @@ import {create} from "ipfs-http-client";
 
 
 //OPTION 1 : INFURA CONFIUGURATION FOR PROJECT < 5 GB
-/*const projectId = process.env.NEXT_PUBLIC_PROJECT_ID;
+const projectId = process.env.NEXT_PUBLIC_PROJECT_ID;
 const projectSecret = process.env.NEXT_PUBLIC_PROJECT_SECRET;
 
 const auth = 'Basic ' + Buffer.from(projectId + ':' + projectSecret).toString('base64')
@@ -49,17 +49,17 @@ const client = create({
   headers: {
     authorization: auth
   }
-})*/
+})
 
 
 // OPTION 2: CREATE YOUR IPFS NODE ON YOUR SERVER https://docs.ipfs.io/how-to/command-line-quick-start/
 // @ts-ignore
-const client = create({
+/*const client = create({
   host: process.env.NEXT_PUBLIC_IPFS_RPC,
   port: 443,
   protocol: 'https',
   apiPath: '/api/v0'
-})
+})*/
 const gateway=process.env.NEXT_PUBLIC_IPFS_GATEWAY;
 
 export const SignMessage = () => {
